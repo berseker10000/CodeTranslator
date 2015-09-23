@@ -1,0 +1,210 @@
+body {
+    background-color: #e1e1e1;
+    margin:0;
+    padding: 0;
+    font-family: "Open Sans";
+}
+
+nav {
+    background-color: #3e3e3e;
+    margin:0;
+    width: 100%;
+}
+
+nav > .navigator, nav > .userArea {
+    display: inline-block;
+}
+
+nav > .navigator > a {
+    color: white;
+    display: inline-block;
+    font-family: "Open Sans";
+    font-size: 1.2em;
+    line-height: 60px;
+    padding: 5px 15px;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav > .navigator > a:hover {
+    background-color: #636363;
+}
+
+.courant::before{
+content:''; /* Ajout du contenu bidon */
+display:block;
+position:absolute; /* Voilà pourquoi on a positionné en relative le lien */
+top:51px;
+left:calc(50% - 10px);  /* La position du triangle par rapport au lien */
+border:solid 10px;  /* Définitions des bordures */
+border-color:transparent transparent #e1e1e1 transparent;
+}
+
+nav > .userArea {
+    color: white;
+    float:right;
+    height: 60px;
+    vertical-align: middle;
+}
+
+nav > .userArea .infos {
+    font-size: 0.8em;
+    padding: 0;
+    margin: 0px 20px 0px 0px;
+}
+
+nav > .userArea p {
+    margin: 20px 30px 20px 0px;
+}
+
+section {
+    clear: both;
+}
+
+#coderContainer {
+    background-color: white;
+    float:left;
+    margin-left:1%;
+    margin-top: 25px;
+    min-height: calc(97vh - 85px);
+    width: 90%;
+}
+
+#coderHeader {
+    border-bottom: 1px solid #626262;
+    padding:0;
+    line-height: 34px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#coderHeader > a > img {
+    background-color: #626262;
+    float:left;
+    display:inline-block;
+    height: 26px;
+    margin:0;
+    padding: 4px 15px;
+}
+
+#coderHeader > a > img:hover {
+    background-color: #727272;
+}
+
+#coderHeader p {
+    clear:left;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#coderHeader > input {
+    border: 0;
+    height: 30px;
+    margin: 0 0 0 10px;
+}
+
+#coderHeader > input.functionName {
+    width: calc(100% - 544px);
+}
+
+#coderHeader > input.typeReturn {
+    width: 100px;
+    float:right;
+    background-color: #626262;
+    color:white;
+    line-height: 24px;
+    padding: 2px 10px;
+}
+
+#coderCorps {
+    float:left;
+    width: 75%;
+}
+
+.coderMenu {
+    background-color: #d6d6d6;
+    width: 100%;
+}
+
+.coderMenu > a {
+    background-color: #d6d6d6;
+    color: #3e3e3e;
+    display: inline-block;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+#coderCorps > .coderMenu >a.actif {
+    background-color: #d19696;
+}
+
+.coderMenu > a:hover {
+    background-color: #c6c6c6;
+}
+
+#editor {
+    display:block;
+    border:0;
+    font-family: "Consolas";
+    font-size: 1em;
+    height:98%;
+    padding: 1%;
+    width: 98%;
+}
+
+#functionCorps {
+    border-left: 3px solid #d6d6d6;
+    display: block;
+    float:left;
+    width: calc(25% - 3px);
+    min-height: 700px;
+}
+
+#functionCorps > .coderMenu > a {
+    border-top: 5px solid #d6d6d6;
+    padding: 7px 20px 12px 20px;
+}
+
+#functionCorps > .coderMenu > a.actif {
+    background-color: white;
+}
+
+#launch {
+    border:0;
+    background-color: #889fbc;
+    width: 7%;
+    float:left;
+    margin: 25px 1%;
+    text-align: center;
+    color: white;
+    display: block;
+    font-family: "Consolas";
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: calc(48.5vh - 57px) 0 calc(48.5vh - 58px) 0;
+}
+
+#launch:hover {
+    background-color: #6882a3;
+}
+
+.coderMenu > label:hover {
+    background-color: #c6c6c6;
+}
+
+.coderMenu > label
+{
+    display: inline-block;
+    background-color: #d6d6d6;
+    padding: 12px 20px;
+}
+.coderMenu > input[type=radio]
+{
+display:none;
+}
+.coderMenu > input[type=radio]:checked + label
+{
+    background-color: #d19696;
+}
