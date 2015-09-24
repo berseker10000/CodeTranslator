@@ -1,0 +1,14 @@
+Fonction Factorielle(n) renvoie Entier
+Déclaration
+Entrée : n est un entier positif
+Sortie : calcule et renvoie la factorielle de n
+Variables
+resultat = 1
+cpt = 1
+Début
+TantQue cpt <= n Faire
+resultat = resultat * cpt
+cpt = cpt + 1
+FinTantQue
+retourner resultat
+Fin
