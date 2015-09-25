@@ -7,7 +7,7 @@
 	<title>Class Mailbox | CodeLeFort</title>
 
 	<script type="text/javascript" src="resources/combined.js?3424053203"></script>
-	<script type="text/javascript" src="elementlist.js?24888196"></script>
+	<script type="text/javascript" src="elementlist.js?1903619985"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
 
 </head>
@@ -29,9 +29,9 @@
 				<li><a href="class-Algorithm.html">Algorithm</a></li>
 				<li><a href="class-Connection.html">Connection</a></li>
 				<li><a href="class-Dictionnary.html">Dictionnary</a></li>
-				<li><a href="class-layout.html">layout</a></li>
+				<li><a href="class-EMail.html">EMail</a></li>
+				<li><a href="class-Layout.html">Layout</a></li>
 				<li class="active"><a href="class-Mailbox.html">Mailbox</a></li>
-				<li><a href="class-Mail...html">Mail </a></li>
 				<li><a href="class-Translation.html">Translation</a></li>
 				<li><a href="class-User.html">User</a></li>
 			</ul>
@@ -114,7 +114,7 @@
 		
 		
 
-		<b>Located at</b> <a href="source-class-Mailbox.html#4-18" title="Go to source code">app/model/mailbox.php</a><br>
+		<b>Located at</b> <a href="source-class-Mailbox.html#4-49" title="Go to source code">app/model/mailbox.php</a><br>
 	</div>
 
 
@@ -132,7 +132,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Mailbox.html#7-9" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Mailbox.html#11-13" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			
@@ -161,7 +161,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-Mailbox.html#11-16" title="Go to source code">add</a>( <span>Mail <var>$mail</var></span> )</code>
+		<code><a href="source-class-Mailbox.html#15-20" title="Go to source code">add</a>( <span>Mail <var>$mail</var></span> )</code>
 
 		<div class="description short">
 			
@@ -181,17 +181,129 @@
 		</div>
 		</div></td>
 	</tr>
-	</table>
+	<tr data-order="load" id="_load">
 
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-container.html#methods">container</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-container.html#_delete">delete()</a>, 
-			<a href="class-container.html#_find">find()</a>, 
-			<a href="class-container.html#_load">load()</a>, 
-			<a href="class-container.html#_update">update()</a>
-		</code></td>
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load">#</a>
+		<code><a href="source-class-Mailbox.html#22-35" title="Go to source code">load</a>( <span>mixed <var>$type</var></span>, <span>mixed <var>$identifier</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-container.html#_load">container::load()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-Mailbox.html#37-39" title="Go to source code">update</a>( <span>mixed <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-container.html#_update">container::update()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-Mailbox.html#41-43" title="Go to source code">delete</a>( <span>mixed <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-container.html#_delete">container::delete()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="find" id="_find">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_find">#</a>
+		<code><a href="source-class-Mailbox.html#45-47" title="Go to source code">find</a>( <span>mixed <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-container.html#_find">container::find()</a></code></div>
+		</div>
+		</div></td>
 	</tr>
 	</table>
 
@@ -205,6 +317,79 @@
 
 
 
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="BYOWNER" id="$BYOWNER">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Mailbox.html#7" title="Go to source code"><var>$BYOWNER</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">0</span></code></td>
+		<td class="description"><div>
+			<a href="#$BYOWNER" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="BYRECEVIER" id="$BYRECEVIER">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Mailbox.html#8" title="Go to source code"><var>$BYRECEVIER</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">1</span></code></td>
+		<td class="description"><div>
+			<a href="#$BYRECEVIER" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="BYSUBJECT" id="$BYSUBJECT">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Mailbox.html#9" title="Go to source code"><var>$BYSUBJECT</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">2</span></code></td>
+		<td class="description"><div>
+			<a href="#$BYSUBJECT" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 

@@ -7,7 +7,7 @@
 	<title>Class Algorithm | CodeLeFort</title>
 
 	<script type="text/javascript" src="resources/combined.js?3424053203"></script>
-	<script type="text/javascript" src="elementlist.js?24888196"></script>
+	<script type="text/javascript" src="elementlist.js?1903619985"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
 
 </head>
@@ -29,9 +29,9 @@
 				<li class="active"><a href="class-Algorithm.html">Algorithm</a></li>
 				<li><a href="class-Connection.html">Connection</a></li>
 				<li><a href="class-Dictionnary.html">Dictionnary</a></li>
-				<li><a href="class-layout.html">layout</a></li>
+				<li><a href="class-EMail.html">EMail</a></li>
+				<li><a href="class-Layout.html">Layout</a></li>
 				<li><a href="class-Mailbox.html">Mailbox</a></li>
-				<li><a href="class-Mail...html">Mail </a></li>
 				<li><a href="class-Translation.html">Translation</a></li>
 				<li><a href="class-User.html">User</a></li>
 			</ul>
@@ -90,6 +90,11 @@
 	<h1>Class Algorithm</h1>
 
 
+	<div class="description">
+	
+<p>Classe Algorithme</p>
+
+	</div>
 
 
 
@@ -105,7 +110,21 @@
 		
 		
 
-		<b>Located at</b> <a href="source-class-Algorithm.html#3-78" title="Go to source code">entity/algorithm.php</a><br>
+				<b>Param:</b>
+				<code>_id</code><br>L'id de l'algorithme<br>
+				<b>Param:</b>
+				<code>_name</code><br>Le nom de l'algorithme<br>
+				<b>Param:</b>
+				<code>_ownerId</code><br>Le nom du propriétaire<br>
+				<b>Param:</b>
+				<code>_content</code><br>Le code de l'algortihme<br>
+				<b>Param:</b>
+				<code>_date</code><br>Date de création de l'algorithme<br>
+				<b>Param:</b>
+				<code>_label</code><br>En-tete de l'algorithme servant de fiche explicative<br>
+				<b>Param:</b>
+				<code>_type</code><br>Type retourné par l'algorithme<br>
+		<b>Located at</b> <a href="source-class-Algorithm.html#3-148" title="Go to source code">entity/algorithm.php</a><br>
 	</div>
 
 
@@ -123,14 +142,18 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___constructor">#</a>
-		<code><a href="source-class-Algorithm.html#12-20" title="Go to source code">__constructor</a>( )</code>
+		<code><a href="source-class-Algorithm.html#22-34" title="Go to source code">__constructor</a>( )</code>
 
 		<div class="description short">
 			
+<p>Constructeur de la classe Algorithm return Un nouvel algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Constructeur de la classe Algorithm return Un nouvel algorithm</p>
+
 
 
 
@@ -145,24 +168,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getId">#</a>
-		<code><a href="source-class-Algorithm.html#22-24" title="Go to source code">getId</a>( )</code>
+		<code><a href="source-class-Algorithm.html#36-42" title="Go to source code">getId</a>( )</code>
 
 		<div class="description short">
 			
+<p>Renvoie l'id de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Renvoie l'id de l'algorithm</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>
+				</div>
 
 
 
@@ -174,24 +205,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getName">#</a>
-		<code><a href="source-class-Algorithm.html#26-28" title="Go to source code">getName</a>( )</code>
+		<code><a href="source-class-Algorithm.html#44-50" title="Go to source code">getName</a>( )</code>
 
 		<div class="description short">
 			
+<p>Renvoie le nom de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Renvoie le nom de l'algorithm</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
 
 
 
@@ -203,24 +242,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getOwnerId">#</a>
-		<code><a href="source-class-Algorithm.html#30-32" title="Go to source code">getOwnerId</a>( )</code>
+		<code><a href="source-class-Algorithm.html#52-58" title="Go to source code">getOwnerId</a>( )</code>
 
 		<div class="description short">
 			
+<p>Renvoie le propriétaite de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Renvoie le propriétaite de l'algorithm</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>
+				</div>
 
 
 
@@ -232,24 +279,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getContent">#</a>
-		<code><a href="source-class-Algorithm.html#34-36" title="Go to source code">getContent</a>( )</code>
+		<code><a href="source-class-Algorithm.html#60-66" title="Go to source code">getContent</a>( )</code>
 
 		<div class="description short">
 			
+<p>Renvoie le code de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Renvoie le code de l'algorithm</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
 
 
 
@@ -261,24 +316,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			date
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getDate">#</a>
-		<code><a href="source-class-Algorithm.html#38-40" title="Go to source code">getDate</a>( )</code>
+		<code><a href="source-class-Algorithm.html#68-74" title="Go to source code">getDate</a>( )</code>
 
 		<div class="description short">
 			
+<p>Renvoie la date de création de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Renvoie la date de création de l'algorithm</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>date</code><br>
+				</div>
 
 
 
@@ -290,24 +353,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getLabel">#</a>
-		<code><a href="source-class-Algorithm.html#42-44" title="Go to source code">getLabel</a>( )</code>
+		<code><a href="source-class-Algorithm.html#76-82" title="Go to source code">getLabel</a>( )</code>
 
 		<div class="description short">
 			
+<p>Renvoie le label de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Renvoie le label de l'algorithm</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
 
 
 
@@ -319,24 +390,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getType">#</a>
-		<code><a href="source-class-Algorithm.html#46-48" title="Go to source code">getType</a>( )</code>
+		<code><a href="source-class-Algorithm.html#84-90" title="Go to source code">getType</a>( )</code>
 
 		<div class="description short">
 			
+<p>Renvoie de type retourné par l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Renvoie de type retourné par l'algorithm</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
 
 
 
@@ -355,16 +434,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setId">#</a>
-		<code><a href="source-class-Algorithm.html#50-52" title="Go to source code">setId</a>( <span>mixed <var>$id</var></span> )</code>
+		<code><a href="source-class-Algorithm.html#92-98" title="Go to source code">setId</a>( <span>type <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Modifie l'id de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Modifie l'id de l'algorithm</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>type</code><br>$id</dd>
+				</dl></div>
 
 
 
@@ -384,16 +472,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setName">#</a>
-		<code><a href="source-class-Algorithm.html#54-56" title="Go to source code">setName</a>( <span>mixed <var>$name</var></span> )</code>
+		<code><a href="source-class-Algorithm.html#100-106" title="Go to source code">setName</a>( <span>type <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Modifie le nom de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Modifie le nom de l'algorithm</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>type</code><br>$name</dd>
+				</dl></div>
 
 
 
@@ -413,16 +510,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setOwnerId">#</a>
-		<code><a href="source-class-Algorithm.html#58-60" title="Go to source code">setOwnerId</a>( <span>mixed <var>$ownerId</var></span> )</code>
+		<code><a href="source-class-Algorithm.html#108-114" title="Go to source code">setOwnerId</a>( <span>type <var>$ownerId</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Modifie le propritétaire de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Modifie le propritétaire de l'algorithm</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ownerId</var></dt>
+					<dd><code>type</code><br>$ownerId</dd>
+				</dl></div>
 
 
 
@@ -442,16 +548,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setContent">#</a>
-		<code><a href="source-class-Algorithm.html#62-64" title="Go to source code">setContent</a>( <span>mixed <var>$content</var></span> )</code>
+		<code><a href="source-class-Algorithm.html#116-122" title="Go to source code">setContent</a>( <span>type <var>$content</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Modifie le code de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Modifie le code de l'algorithm</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$content</var></dt>
+					<dd><code>type</code><br>$content</dd>
+				</dl></div>
 
 
 
@@ -471,16 +586,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDate">#</a>
-		<code><a href="source-class-Algorithm.html#66-68" title="Go to source code">setDate</a>( <span>mixed <var>$date</var></span> )</code>
+		<code><a href="source-class-Algorithm.html#124-130" title="Go to source code">setDate</a>( <span>type <var>$date</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Modifie la date de création de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Modifie la date de création de l'algorithm</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$date</var></dt>
+					<dd><code>type</code><br>$date</dd>
+				</dl></div>
 
 
 
@@ -500,16 +624,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setLabel">#</a>
-		<code><a href="source-class-Algorithm.html#70-72" title="Go to source code">setLabel</a>( <span>mixed <var>$label</var></span> )</code>
+		<code><a href="source-class-Algorithm.html#132-138" title="Go to source code">setLabel</a>( <span>type <var>$label</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Modifie l'étiquette de l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Modifie l'étiquette de l'algorithm</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$label</var></dt>
+					<dd><code>type</code><br>$label</dd>
+				</dl></div>
 
 
 
@@ -529,16 +662,25 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setType">#</a>
-		<code><a href="source-class-Algorithm.html#74-76" title="Go to source code">setType</a>( <span>mixed <var>$type</var></span> )</code>
+		<code><a href="source-class-Algorithm.html#140-146" title="Go to source code">setType</a>( <span>type <var>$type</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Modifie le type retourné par l'algorithm</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Modifie le type retourné par l'algorithm</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd><code>type</code><br>$type</dd>
+				</dl></div>
 
 
 

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.8.0">
 
-	<title>Class User | CodeLeFort</title>
+	<title>Class EMail | CodeLeFort</title>
 
 	<script type="text/javascript" src="resources/combined.js?3424053203"></script>
 	<script type="text/javascript" src="elementlist.js?1903619985"></script>
@@ -29,11 +29,11 @@
 				<li><a href="class-Algorithm.html">Algorithm</a></li>
 				<li><a href="class-Connection.html">Connection</a></li>
 				<li><a href="class-Dictionnary.html">Dictionnary</a></li>
-				<li><a href="class-EMail.html">EMail</a></li>
+				<li class="active"><a href="class-EMail.html">EMail</a></li>
 				<li><a href="class-Layout.html">Layout</a></li>
 				<li><a href="class-Mailbox.html">Mailbox</a></li>
 				<li><a href="class-Translation.html">Translation</a></li>
-				<li class="active"><a href="class-User.html">User</a></li>
+				<li><a href="class-User.html">User</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -87,12 +87,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class User</h1>
+	<h1>Class EMail</h1>
 
 
 	<div class="description">
 	
-<p>Classe utilisateur</p>
+<p>Classe EMail</p>
 
 	</div>
 
@@ -111,18 +111,16 @@
 		
 
 				<b>Param:</b>
-				<code>_id</code><br>L'id de l'utilisateur<br>
+				<code>_id</code><br>Identifiant du Email<br>
 				<b>Param:</b>
-				<code>_name</code><br>Le nom/pseudo de l'utilisateur<br>
+				<code>_ownerId</code><br>Identifiant du propriétaire du Email<br>
 				<b>Param:</b>
-				<code>_password</code><br>Le mot de passe de l'utilisateur<br>
+				<code>_date</code><br>Date de création du Email<br>
 				<b>Param:</b>
-				<code>_avatar</code><br>L'avatar de l'utilisateur<br>
+				<code>_content</code><br>Contenu du Email<br>
 				<b>Param:</b>
-				<code>_points</code><br>Le nombre de points de l'utilisateur<br>
-				<b>Param:</b>
-				<code>_rescuePassword</code><br>Le mot de passe de sécurité<br>
-		<b>Located at</b> <a href="source-class-User.html#3-128" title="Go to source code">entity/user.php</a><br>
+				<code>_subjectId</code><br>Sujet de discussion auquel appartient le Email<br>
+		<b>Located at</b> <a href="source-class-EMail.html#4-101" title="Go to source code">entity/email.php</a><br>
 	</div>
 
 
@@ -140,17 +138,17 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-User.html#20-30" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-EMail.html#19-28" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			
-<p>Constructeur de la classe User</p>
+<p>Constructeur de la classe mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Constructeur de la classe User</p>
+<p>Constructeur de la classe mail</p>
 
 
 
@@ -173,17 +171,17 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getId">#</a>
-		<code><a href="source-class-User.html#32-38" title="Go to source code">getId</a>( )</code>
+		<code><a href="source-class-EMail.html#30-36" title="Go to source code">getId</a>( )</code>
 
 		<div class="description short">
 			
-<p>Renvoie l'id du User</p>
+<p>Renvoie l'identifiant de Mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Renvoie l'id du User</p>
+<p>Renvoie l'identifiant de Mail</p>
 
 
 
@@ -199,7 +197,81 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getName" id="_getName">
+	<tr data-order="getOwnerId" id="_getOwnerId">
+
+		<td class="attributes"><code>
+			 public 
+			id
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getOwnerId">#</a>
+		<code><a href="source-class-EMail.html#38-44" title="Go to source code">getOwnerId</a>( )</code>
+
+		<div class="description short">
+			
+<p>Renvoie l'identifiant du propriétaire de Mail</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Renvoie l'identifiant du propriétaire de Mail</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>id</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDate" id="_getDate">
+
+		<td class="attributes"><code>
+			 public 
+			date
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDate">#</a>
+		<code><a href="source-class-EMail.html#46-52" title="Go to source code">getDate</a>( )</code>
+
+		<div class="description short">
+			
+<p>Renvoie la date de création de Mail</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Renvoie la date de création de Mail</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>date</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getContent" id="_getContent">
 
 		<td class="attributes"><code>
 			 public 
@@ -209,18 +281,18 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getName">#</a>
-		<code><a href="source-class-User.html#40-46" title="Go to source code">getName</a>( )</code>
+		<a class="anchor" href="#_getContent">#</a>
+		<code><a href="source-class-EMail.html#54-60" title="Go to source code">getContent</a>( )</code>
 
 		<div class="description short">
 			
-<p>Renvoie le nom du User</p>
+<p>Renvoie le contenu du mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Renvoie le nom du User</p>
+<p>Renvoie le contenu du mail</p>
 
 
 
@@ -236,81 +308,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getPassword" id="_getPassword">
-
-		<td class="attributes"><code>
-			 public 
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getPassword">#</a>
-		<code><a href="source-class-User.html#48-54" title="Go to source code">getPassword</a>( )</code>
-
-		<div class="description short">
-			
-<p>Renvoie le mot de passe du User</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Renvoie le mot de passe du User</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getAvatar" id="_getAvatar">
-
-		<td class="attributes"><code>
-			 public 
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getAvatar">#</a>
-		<code><a href="source-class-User.html#56-62" title="Go to source code">getAvatar</a>( )</code>
-
-		<div class="description short">
-			
-<p>Renvoie l'avatar du User</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Renvoie l'avatar du User</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getPoints" id="_getPoints">
+	<tr data-order="getSubjectId" id="_getSubjectId">
 
 		<td class="attributes"><code>
 			 public 
@@ -320,18 +318,18 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getPoints">#</a>
-		<code><a href="source-class-User.html#64-70" title="Go to source code">getPoints</a>( )</code>
+		<a class="anchor" href="#_getSubjectId">#</a>
+		<code><a href="source-class-EMail.html#62-68" title="Go to source code">getSubjectId</a>( )</code>
 
 		<div class="description short">
 			
-<p>Renvoie le nombre de point du User</p>
+<p>Renvoie le sujet de discussion de Mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Renvoie le nombre de point du User</p>
+<p>Renvoie le sujet de discussion de Mail</p>
 
 
 
@@ -339,43 +337,6 @@
 				<h4>Returns</h4>
 				<div class="list">
 					<code>integer</code><br>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getRescuePassword" id="_getRescuePassword">
-
-		<td class="attributes"><code>
-			 public 
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getRescuePassword">#</a>
-		<code><a href="source-class-User.html#72-78" title="Go to source code">getRescuePassword</a>( )</code>
-
-		<div class="description short">
-			
-<p>Renvoie le mot de passe de sécurité de l'utilisateur</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Renvoie le mot de passe de sécurité de l'utilisateur</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br>
 				</div>
 
 
@@ -395,24 +356,24 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setId">#</a>
-		<code><a href="source-class-User.html#80-86" title="Go to source code">setId</a>( <span>mixed <var>$id</var></span> )</code>
+		<code><a href="source-class-EMail.html#70-76" title="Go to source code">setId</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Modifie l'id de l'utilisateur</p>
+<p>Modifie l'identifiant de Mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Modifie l'id de l'utilisateur</p>
+<p>Modifie l'identifiant de Mail</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$id</var></dt>
-					<dd><code>mixed</code><br>$id Le nouvel id</dd>
+					<dd><code>integer</code><br>$id</dd>
 				</dl></div>
 
 
@@ -422,7 +383,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setName" id="_setName">
+	<tr data-order="setOwnerId" id="_setOwnerId">
 
 		<td class="attributes"><code>
 			 public 
@@ -432,25 +393,25 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setName">#</a>
-		<code><a href="source-class-User.html#88-94" title="Go to source code">setName</a>( <span>mixed <var>$name</var></span> )</code>
+		<a class="anchor" href="#_setOwnerId">#</a>
+		<code><a href="source-class-EMail.html#78-84" title="Go to source code">setOwnerId</a>( <span>integer <var>$ownerId</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Modifie le nom de l'utilisateur</p>
+<p>Modifie l'identifiant du propritétaire de Mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Modifie le nom de l'utilisateur</p>
+<p>Modifie l'identifiant du propritétaire de Mail</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd><code>mixed</code><br>$name Le nouveau nom</dd>
+					<dt><var>$ownerId</var></dt>
+					<dd><code>integer</code><br>$ownerId</dd>
 				</dl></div>
 
 
@@ -460,7 +421,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setPassword" id="_setPassword">
+	<tr data-order="setContent" id="_setContent">
 
 		<td class="attributes"><code>
 			 public 
@@ -470,25 +431,25 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setPassword">#</a>
-		<code><a href="source-class-User.html#96-102" title="Go to source code">setPassword</a>( <span>mixed <var>$password</var></span> )</code>
+		<a class="anchor" href="#_setContent">#</a>
+		<code><a href="source-class-EMail.html#86-92" title="Go to source code">setContent</a>( <span>string <var>$content</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Modifie mot de passe de l'utilisateur</p>
+<p>Modifie le contenu de Mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Modifie mot de passe de l'utilisateur</p>
+<p>Modifie le contenu de Mail</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$password</var></dt>
-					<dd><code>mixed</code><br>$password le nouveau mot de passe</dd>
+					<dt><var>$content</var></dt>
+					<dd><code>string</code><br>$content</dd>
 				</dl></div>
 
 
@@ -498,7 +459,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setAvatar" id="_setAvatar">
+	<tr data-order="setSubjectId" id="_setSubjectId">
 
 		<td class="attributes"><code>
 			 public 
@@ -508,101 +469,25 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setAvatar">#</a>
-		<code><a href="source-class-User.html#104-110" title="Go to source code">setAvatar</a>( <span>mixed <var>$avatar</var></span> )</code>
+		<a class="anchor" href="#_setSubjectId">#</a>
+		<code><a href="source-class-EMail.html#94-100" title="Go to source code">setSubjectId</a>( <span>integer <var>$subjectId</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Modifie l'avatar de l'utilisateur</p>
+<p>Modifie le sujet de discussion de Mail</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Modifie l'avatar de l'utilisateur</p>
+<p>Modifie le sujet de discussion de Mail</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$avatar</var></dt>
-					<dd><code>mixed</code><br>$avatar le lien du nouvel avatar de l'utilisateur</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setPoints" id="_setPoints">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setPoints">#</a>
-		<code><a href="source-class-User.html#112-118" title="Go to source code">setPoints</a>( <span>mixed <var>$points</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Modifie le nombre de point de l'utilisateur</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Modifie le nombre de point de l'utilisateur</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$points</var></dt>
-					<dd><code>mixed</code><br>$points le nouveau nombre de points de l'utilisateur</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setRescuePassword" id="_setRescuePassword">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setRescuePassword">#</a>
-		<code><a href="source-class-User.html#120-126" title="Go to source code">setRescuePassword</a>( <span>mixed <var>$rescuePassword</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Modifie le mot de passe de secours de l'utilisateur</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Modifie le mot de passe de secours de l'utilisateur</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$rescuePassword</var></dt>
-					<dd><code>mixed</code><br>$rescuePassword le nouveau mot de passe de secours</dd>
+					<dt><var>$subjectId</var></dt>
+					<dd><code>integer</code><br>$subjectId</dd>
 				</dl></div>
 
 
