@@ -2,8 +2,8 @@
 require_once '../entity/user.php';
 require_once 'connection.php';
 
-class Dictionnary {
-    private $_list;
+class Dictionnary implements container{
+    public $_list;
     private $_size;
     
     public function __construct() {
@@ -11,29 +11,38 @@ class Dictionnary {
         $this->_size = 0;
     }
     
-    public function add(User $item) {
+    public function add($item) {
         $db = new Connection();
         $db->add($item);
         $db->kill();
     }
     
-    public function find(User $item) {
+    public function find($user) {
         $db = new Connection();
-        $result = $db->find($item);
+        $result = $db->find($user);
         $db->kill();
-        var_dump($result);
         return $result;
     }
     
-    public function findAll() {
+    public function load($param) {
         $db = new Connection();
-        $this->_list = $db->findAll('user');
+        $this->_list = $db->load(array('user'));
         $this->_size = count($this->_list);
         $db->kill();
     }
     
-    public function getList() {
-        return $this->_list;
+    
+    public function delete($user) {
+        $db = new Connection();
+        $result = $db->delete($user);
+        $db->kill();
+        return result;
     }
     
+    public function update($user) {
+        $db = new Connection();
+        $result = $db->update($user);
+        $db->kill();
+        return $result;
+    }
 }

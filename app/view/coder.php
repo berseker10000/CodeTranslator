@@ -1,7 +1,5 @@
 <?php
-    $userId = 1;
-    include_once '../modele/functionSeeker.php';
-    $userFunctions = userFunction($userId);
+    
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +7,7 @@
 <head>
     <title>Encodeur de Pseudo Code</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../web/css/style.css">
 </head>
 <body>
     <nav>
@@ -33,13 +31,13 @@
      <form action="../controleur/coder.php" method="POST">
     <div id="coderContainer">
             <div id="coderHeader">
-                <a href="#"><img src="../css/pictures/new.png" alt="Nouveau Fichier" title="Nouveau Fichier"/></a>
-                <a href="#"><img src="../css/pictures/open.png" alt="Ouvrir" title="Ouvrir"/></a>
-                <a href="#"><img src="../css/pictures/save.png" alt="Enregistrer" title="Enregistrer"/></a>
-                <a href="#"><img src="../css/pictures/backup.png" alt="Récupération" title="Récupérer une ancienne version"/></a>
-                <a href="#"><img src="../css/pictures/help.png" alt="Demander de l'aide" title="Demander de l'aide"/></a>
-                <a href="#"><img src="../css/pictures/share.png" alt="Partager" title="Partager votre algorithme" alt=""/></a>
-                <a href="#"><img src="../css/pictures/layout.png" alt="Gérer les structures de traduction" title="Gérer les structures de traduction"/></a>
+                <a href="#"><img src="../../web/css/pictures/new.png" alt="Nouveau Fichier" title="Nouveau Fichier"/></a>
+                <a href="#"><img src="../../web/css/pictures/open.png" alt="Ouvrir" title="Ouvrir"/></a>
+                <a href="#"><img src="../../web/css/pictures/save.png" alt="Enregistrer" title="Enregistrer"/></a>
+                <a href="#"><img src="../../web/css/pictures/backup.png" alt="Récupération" title="Récupérer une ancienne version"/></a>
+                <a href="#"><img src="../../web/css/pictures/help.png" alt="Demander de l'aide" title="Demander de l'aide"/></a>
+                <a href="#"><img src="../../web/css/pictures/share.png" alt="Partager" title="Partager votre algorithme" alt=""/></a>
+                <a href="#"><img src="../../web/css/pictures/layout.png" alt="Gérer les structures de traduction" title="Gérer les structures de traduction"/></a>
                 <input type="text" class="functionName" placeholder="FONCTION(type parametre)"/>
                 <input type="text" class="typeReturn" placeholder="TYPE RETOURNE"/>
             </div>
@@ -57,11 +55,8 @@
                 </div>
                  <div id="userFunction">
                 <table>
-                    <?php 
-                    foreach ($userFunctions as $function) {
-                        echo "<tr><td>".$function['nom'].$function['type'].'</td><td><input type="checkbox" name="userFonction[]" value="'.$function['id'].'"></td></tr>';
-                    }
-                    ?>
+                    
+                  
                 </table>
             </div>
             </div>

@@ -31,11 +31,11 @@ function interpreting($data) {
     $patterns[6] =      '#\$caract(e|è)re#';
     $remplacements[6]=  "(\'\w\')";
     
-    $patterns[7]=       '#cha(i|î)ne#';
+    $patterns[7]=       '#$cha(i|î)ne#';
     $remplacements[7]=  '(\"(.*)\")';
     
     $patterns[8]=       '#\$bool(é|e)en#';
-    $remplacements[8]=  '(vrai|faux)';
+    $remplacements[8]=  '(vrai|faux|true|false)';
     
     $patterns[9]=       '#\$type#';
     $remplacements[9]=  '\s(entier|r(é|e)el|caract(e|è)re|cha(i|î)ne|bool(é|e)en)\s';
