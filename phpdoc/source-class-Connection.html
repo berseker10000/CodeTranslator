@@ -7,8 +7,8 @@
 
 	<title>File app/model/connection.php | CodeLeFort</title>
 
-	<script type="text/javascript" src="resources/combined.js?3424053203"></script>
-	<script type="text/javascript" src="elementlist.js?1903619985"></script>
+	<script type="text/javascript" src="resources/combined.js?3770084987"></script>
+	<script type="text/javascript" src="elementlist.js?930099499"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
 
 </head>
@@ -32,6 +32,7 @@
 				<li><a href="class-Dictionnary.html">Dictionnary</a></li>
 				<li><a href="class-EMail.html">EMail</a></li>
 				<li><a href="class-Layout.html">Layout</a></li>
+				<li><a href="class-LayoutCollection.html">LayoutCollection</a></li>
 				<li><a href="class-Mailbox.html">Mailbox</a></li>
 				<li><a href="class-Translation.html">Translation</a></li>
 				<li><a href="class-User.html">User</a></li>
@@ -218,8 +219,8 @@
 </span><span id="128" class="l"><a class="l" href="#128">128: </a>        <span class="php-comment">/* Class Translation */</span>
 </span><span id="129" class="l"><a class="l" href="#129">129: </a>          
 </span><span id="130" class="l"><a class="l" href="#130">130: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$item</span> <span class="php-keyword1">instanceof</span> Translation) {
-</span><span id="131" class="l"><a class="l" href="#131">131: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;prepare(<span class="php-quote">'Delete from translation where id = :id'</span>);
-</span><span id="132" class="l"><a class="l" href="#132">132: </a>            <span class="php-var">$result</span> = <span class="php-var">$query</span>-&gt;execute(<span class="php-keyword1">array</span>(<span class="php-quote">&quot;id&quot;</span> =&gt; <span class="php-var">$item</span>-&gt;getId()));    
+</span><span id="131" class="l"><a class="l" href="#131">131: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;prepare(<span class="php-quote">'Delete from translation where layoutId = :layoutId and language = :language'</span>);
+</span><span id="132" class="l"><a class="l" href="#132">132: </a>            <span class="php-var">$result</span> = <span class="php-var">$query</span>-&gt;execute(<span class="php-keyword1">array</span>(<span class="php-quote">&quot;layoutId&quot;</span> =&gt; <span class="php-var">$item</span>-&gt;getLayoutId(), <span class="php-quote">&quot;language&quot;</span> =&gt; <span class="php-var">$item</span>-&gt;getLanguage()));    
 </span><span id="133" class="l"><a class="l" href="#133">133: </a>        }
 </span><span id="134" class="l"><a class="l" href="#134">134: </a>        
 </span><span id="135" class="l"><a class="l" href="#135">135: </a>        
@@ -327,10 +328,10 @@
 </span></span><span id="237" class="l"><a class="l" href="#237">237: </a><span class="php-comment">     */</span>
 </span><span id="238" class="l"><a class="l" href="#238">238: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_load" href="#_load">load</a>(<span class="php-var">$param</span>) {
 </span><span id="239" class="l"><a class="l" href="#239">239: </a>        <span class="php-var">$result</span> = <span class="php-keyword1">array</span>();
-</span><span id="240" class="l"><a class="l" href="#240">240: </a>        
+</span><span id="240" class="l"><a class="l" href="#240">240: </a>        <span class="php-keyword2">var_dump</span>(<span class="php-var">$param</span>);
 </span><span id="241" class="l"><a class="l" href="#241">241: </a>        <span class="php-comment">/* Chargement de l'annuaire utilisateur */</span>
 </span><span id="242" class="l"><a class="l" href="#242">242: </a>        
-</span><span id="243" class="l"><a class="l" href="#243">243: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$isset</span>(<span class="php-var">$param</span>[<span class="php-num">0</span>]) &amp;&amp; <span class="php-var">$param</span>[<span class="php-num">0</span>] == <span class="php-quote">'user'</span>) {
+</span><span id="243" class="l"><a class="l" href="#243">243: </a>        <span class="php-keyword1">if</span>(<span class="php-keyword1">isset</span>(<span class="php-var">$param</span>[<span class="php-num">0</span>]) &amp;&amp; <span class="php-var">$param</span>[<span class="php-num">0</span>] == <span class="php-quote">'user'</span>) {
 </span><span id="244" class="l"><a class="l" href="#244">244: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;query(<span class="php-quote">'Select * From user'</span>);
 </span><span id="245" class="l"><a class="l" href="#245">245: </a>            <span class="php-keyword1">foreach</span>(<span class="php-var">$query</span>-&gt;fetchAll() <span class="php-keyword1">as</span> <span class="php-var">$data</span>) {
 </span><span id="246" class="l"><a class="l" href="#246">246: </a>                <span class="php-var">$user</span> = <span class="php-keyword1">new</span> User();
@@ -383,7 +384,7 @@
 </span><span id="293" class="l"><a class="l" href="#293">293: </a>        <span class="php-comment">/* Chargement de la collection de layout public */</span>
 </span><span id="294" class="l"><a class="l" href="#294">294: </a>        
 </span><span id="295" class="l"><a class="l" href="#295">295: </a>        <span class="php-keyword1">if</span>(<span class="php-keyword1">isset</span>(<span class="php-var">$param</span>[<span class="php-num">0</span>]) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$param</span>[<span class="php-num">1</span>]) &amp;&amp; <span class="php-var">$param</span>[<span class="php-num">0</span>] == <span class="php-quote">'layout'</span> &amp;&amp; <span class="php-var">$param</span>[<span class="php-num">1</span>] == <span class="php-quote">'public'</span>) {
-</span><span id="296" class="l"><a class="l" href="#296">296: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;query(<span class="php-quote">'Select * from layout where ownerId = 0'</span>);
+</span><span id="296" class="l"><a class="l" href="#296">296: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;query(<span class="php-quote">'Select * from layout where ownerId = 1'</span>);
 </span><span id="297" class="l"><a class="l" href="#297">297: </a>            <span class="php-keyword1">foreach</span>(<span class="php-var">$query</span>-&gt;fetchAll() <span class="php-keyword1">as</span> <span class="php-var">$data</span>) {
 </span><span id="298" class="l"><a class="l" href="#298">298: </a>                <span class="php-var">$layout</span> = <span class="php-keyword1">new</span> Layout();
 </span><span id="299" class="l"><a class="l" href="#299">299: </a>                <span class="php-var">$layout</span>-&gt;setId(<span class="php-var">$data</span>[<span class="php-quote">'id'</span>]);
@@ -457,134 +458,85 @@
 </span><span id="367" class="l"><a class="l" href="#367">367: </a>        <span class="php-keyword1">return</span> <span class="php-var">$result</span>;
 </span><span id="368" class="l"><a class="l" href="#368">368: </a>    }
 </span><span id="369" class="l"><a class="l" href="#369">369: </a>    
-</span><span id="370" class="l"><a class="l" href="#370">370: </a>    
-</span><span id="371" class="l"><a class="l" href="#371">371: </a>    
-</span><span id="372" class="l"><a class="l" href="#372">372: </a>    
-</span><span id="373" class="l"><a class="l" href="#373">373: </a>    
-</span><span id="374" class="l"><a class="l" href="#374">374: </a>    
-</span><span id="375" class="l"><a class="l" href="#375">375: </a>    
-</span><span id="376" class="l"><a class="l" href="#376">376: </a>    
-</span><span id="377" class="l"><a class="l" href="#377">377: </a>    
-</span><span id="378" class="l"><a class="l" href="#378">378: </a>    
-</span><span id="379" class="l"><a class="l" href="#379">379: </a>    
-</span><span id="380" class="l"><a class="l" href="#380">380: </a>    
-</span><span id="381" class="l"><a class="l" href="#381">381: </a>    
-</span><span id="382" class="l"><a class="l" href="#382">382: </a>    
-</span><span id="383" class="l"><a class="l" href="#383">383: </a>    
-</span><span id="384" class="l"><a class="l" href="#384">384: </a>    
-</span><span id="385" class="l"><a class="l" href="#385">385: </a>    
-</span><span id="386" class="l"><a class="l" href="#386">386: </a>    
-</span><span id="387" class="l"><a class="l" href="#387">387: </a>    
-</span><span id="388" class="l"><a class="l" href="#388">388: </a>    
-</span><span id="389" class="l"><a class="l" href="#389">389: </a>    
-</span><span id="390" class="l"><a class="l" href="#390">390: </a>    
-</span><span id="391" class="l"><a class="l" href="#391">391: </a>    
-</span><span id="392" class="l"><a class="l" href="#392">392: </a>    
-</span><span id="393" class="l"><a class="l" href="#393">393: </a>    
-</span><span id="394" class="l"><a class="l" href="#394">394: </a>    
-</span><span id="395" class="l"><a class="l" href="#395">395: </a>    
-</span><span id="396" class="l"><a class="l" href="#396">396: </a>    
-</span><span id="397" class="l"><a class="l" href="#397">397: </a>    
-</span><span id="398" class="l"><a class="l" href="#398">398: </a>    
-</span><span id="399" class="l"><a class="l" href="#399">399: </a>    
-</span><span id="400" class="l"><a class="l" href="#400">400: </a>    
-</span><span id="401" class="l"><a class="l" href="#401">401: </a>    
-</span><span id="402" class="l"><a class="l" href="#402">402: </a>    
-</span><span id="403" class="l"><a class="l" href="#403">403: </a>    
-</span><span id="404" class="l"><a class="l" href="#404">404: </a>    
-</span><span id="405" class="l"><a class="l" href="#405">405: </a>    
-</span><span id="406" class="l"><a class="l" href="#406">406: </a>    
-</span><span id="407" class="l"><a class="l" href="#407">407: </a>    
-</span><span id="408" class="l"><a class="l" href="#408">408: </a>    
-</span><span id="409" class="l"><a class="l" href="#409">409: </a>    
-</span><span id="410" class="l"><a class="l" href="#410">410: </a>    
-</span><span id="411" class="l"><a class="l" href="#411">411: </a>    
-</span><span id="412" class="l"><a class="l" href="#412">412: </a>    
-</span><span id="413" class="l"><a class="l" href="#413">413: </a>    
-</span><span id="414" class="l"><a class="l" href="#414">414: </a>    
-</span><span id="415" class="l"><a class="l" href="#415">415: </a>    
-</span><span id="416" class="l"><a class="l" href="#416">416: </a>    
-</span><span id="417" class="l"><a class="l" href="#417">417: </a>    
-</span><span id="418" class="l"><a class="l" href="#418">418: </a>    
-</span><span id="419" class="l"><a class="l" href="#419">419: </a>    
-</span><span id="420" class="l"><a class="l" href="#420">420: </a>    
-</span><span id="421" class="l"><a class="l" href="#421">421: </a>    
-</span><span id="422" class="l"><a class="l" href="#422">422: </a>    
-</span><span id="423" class="l"><a class="l" href="#423">423: </a>    
-</span><span id="424" class="l"><a class="l" href="#424">424: </a>    
-</span><span id="425" class="l"><a class="l" href="#425">425: </a>    
-</span><span id="426" class="l"><a class="l" href="#426">426: </a>    
-</span><span id="427" class="l"><a class="l" href="#427">427: </a>    
-</span><span id="428" class="l"><a class="l" href="#428">428: </a>    
-</span><span id="429" class="l"><a class="l" href="#429">429: </a>    
-</span><span id="430" class="l"><a class="l" href="#430">430: </a>    
-</span><span id="431" class="l"><a class="l" href="#431">431: </a>    
-</span><span id="432" class="l"><a class="l" href="#432">432: </a>    
-</span><span id="433" class="l"><a class="l" href="#433">433: </a>    
-</span><span id="434" class="l"><a class="l" href="#434">434: </a>    
-</span><span id="435" class="l"><a class="l" href="#435">435: </a>    
-</span><span id="436" class="l"><a class="l" href="#436">436: </a>    
-</span><span id="437" class="l"><a class="l" href="#437">437: </a>    
+</span><span id="370" class="l"><a class="l" href="#370">370: </a>    <span class="php-comment">/**
+</span></span><span id="371" class="l"><a class="l" href="#371">371: </a><span class="php-comment">     * Mise à jour d'un objet item dans sa table correspondante
+</span></span><span id="372" class="l"><a class="l" href="#372">372: </a><span class="php-comment">     * @param Mixed $item L'objet à mettre à jour
+</span></span><span id="373" class="l"><a class="l" href="#373">373: </a><span class="php-comment">     * @return boolean
+</span></span><span id="374" class="l"><a class="l" href="#374">374: </a><span class="php-comment">     * 
+</span></span><span id="375" class="l"><a class="l" href="#375">375: </a><span class="php-comment">     *  - True -&gt; La mise à jour a été effectuée correctement
+</span></span><span id="376" class="l"><a class="l" href="#376">376: </a><span class="php-comment">     *  - False -&gt; La mise à jour n'a pas été effectuée
+</span></span><span id="377" class="l"><a class="l" href="#377">377: </a><span class="php-comment">     */</span>
+</span><span id="378" class="l"><a class="l" href="#378">378: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_update" href="#_update">update</a>(<span class="php-var">$item</span>) {
+</span><span id="379" class="l"><a class="l" href="#379">379: </a>        <span class="php-var">$result</span> = <span class="php-keyword1">null</span>;
+</span><span id="380" class="l"><a class="l" href="#380">380: </a>        
+</span><span id="381" class="l"><a class="l" href="#381">381: </a>        <span class="php-comment">/* Mise à jour d'un objet utilisateur */</span>
+</span><span id="382" class="l"><a class="l" href="#382">382: </a>        
+</span><span id="383" class="l"><a class="l" href="#383">383: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$item</span> <span class="php-keyword1">instanceof</span> User) {
+</span><span id="384" class="l"><a class="l" href="#384">384: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;prepare(<span class="php-quote">'Update user set name = :name, password = :password, avatar = :avatar, points = :points, rescuePassword = :rescuePassword where id = :id'</span>);
+</span><span id="385" class="l"><a class="l" href="#385">385: </a>            <span class="php-var">$result</span> = <span class="php-var">$query</span>-&gt;execute(<span class="php-keyword1">array</span>(<span class="php-quote">'id'</span> =&gt; <span class="php-var">$item</span>-&gt;getId(),
+</span><span id="386" class="l"><a class="l" href="#386">386: </a>                                  <span class="php-quote">'password'</span> =&gt; <span class="php-var">$item</span>-&gt;getPassword(),
+</span><span id="387" class="l"><a class="l" href="#387">387: </a>                                  <span class="php-quote">'name'</span> =&gt; <span class="php-var">$item</span>-&gt;getPassword(),
+</span><span id="388" class="l"><a class="l" href="#388">388: </a>                                  <span class="php-quote">'avatar'</span> =&gt; <span class="php-var">$item</span>-&gt;getAvatar(),
+</span><span id="389" class="l"><a class="l" href="#389">389: </a>                                  <span class="php-quote">'points'</span> =&gt; <span class="php-var">$item</span>-&gt;getPoins(),
+</span><span id="390" class="l"><a class="l" href="#390">390: </a>                                  <span class="php-quote">'rescuePassword'</span> =&gt; <span class="php-var">$item</span>-&gt;getRescuePassword()));    
+</span><span id="391" class="l"><a class="l" href="#391">391: </a>        }
+</span><span id="392" class="l"><a class="l" href="#392">392: </a>        
+</span><span id="393" class="l"><a class="l" href="#393">393: </a>        <span class="php-comment">/* Mise à jour d'un objet Algorithm */</span>
+</span><span id="394" class="l"><a class="l" href="#394">394: </a>        
+</span><span id="395" class="l"><a class="l" href="#395">395: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$item</span> <span class="php-keyword1">instanceof</span> Algorithm) {
+</span><span id="396" class="l"><a class="l" href="#396">396: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;prepare(<span class="php-quote">'Update function set content = :content, date = :date, label = :label, name = :name, ownerId = :ownerId,dtype = :type where id = :id'</span>);
+</span><span id="397" class="l"><a class="l" href="#397">397: </a>            <span class="php-var">$result</span> = <span class="php-var">$query</span>-&gt;execute(<span class="php-keyword1">array</span>(<span class="php-quote">'id'</span> =&gt; <span class="php-var">$item</span>-&gt;getId(),
+</span><span id="398" class="l"><a class="l" href="#398">398: </a>                                            <span class="php-quote">'content'</span> =&gt; <span class="php-var">$item</span>-&gt;getContent(),
+</span><span id="399" class="l"><a class="l" href="#399">399: </a>                                            <span class="php-quote">'name'</span> =&gt; <span class="php-var">$item</span>-&gt;getName(),
+</span><span id="400" class="l"><a class="l" href="#400">400: </a>                                            <span class="php-quote">'ownerId'</span> =&gt; <span class="php-var">$item</span>-&gt;getOwnerId(),
+</span><span id="401" class="l"><a class="l" href="#401">401: </a>                                            <span class="php-quote">'label'</span> =&gt; <span class="php-var">$item</span>-&gt;getLabel(),
+</span><span id="402" class="l"><a class="l" href="#402">402: </a>                                            <span class="php-quote">'type'</span> =&gt; <span class="php-var">$item</span>-&gt;<span class="php-keyword2">getType</span>(),
+</span><span id="403" class="l"><a class="l" href="#403">403: </a>                                            <span class="php-quote">'date'</span> =&gt; <span class="php-var">$item</span>-&gt;<span class="php-keyword2">getDate</span>()));
+</span><span id="404" class="l"><a class="l" href="#404">404: </a>        }
+</span><span id="405" class="l"><a class="l" href="#405">405: </a>      
+</span><span id="406" class="l"><a class="l" href="#406">406: </a>        <span class="php-comment">/* Mise à jour d'un objet Layout */</span>
+</span><span id="407" class="l"><a class="l" href="#407">407: </a>        
+</span><span id="408" class="l"><a class="l" href="#408">408: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$item</span> <span class="php-keyword1">instanceof</span> Layout) {
+</span><span id="409" class="l"><a class="l" href="#409">409: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;prepare(<span class="php-quote">'Update layout set ownerId = :ownerId, code = :code where id = :id'</span>);
+</span><span id="410" class="l"><a class="l" href="#410">410: </a>            <span class="php-var">$result</span> = <span class="php-var">$query</span>-&gt;execute(<span class="php-keyword1">array</span>(<span class="php-quote">'id'</span> =&gt; <span class="php-var">$item</span>-&gt;getId(),
+</span><span id="411" class="l"><a class="l" href="#411">411: </a>                                            <span class="php-quote">'ownerId'</span> =&gt; <span class="php-var">$item</span>-&gt;getOwnerId(),
+</span><span id="412" class="l"><a class="l" href="#412">412: </a>                                            <span class="php-quote">'code'</span> =&gt; <span class="php-var">$item</span>-&gt;getCode()));
+</span><span id="413" class="l"><a class="l" href="#413">413: </a>        }
+</span><span id="414" class="l"><a class="l" href="#414">414: </a>        
+</span><span id="415" class="l"><a class="l" href="#415">415: </a>        <span class="php-comment">/* Mise à jour d'un objet Translation */</span>
+</span><span id="416" class="l"><a class="l" href="#416">416: </a>        
+</span><span id="417" class="l"><a class="l" href="#417">417: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$item</span> <span class="php-keyword1">instanceof</span> Translation) {
+</span><span id="418" class="l"><a class="l" href="#418">418: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;prepare(<span class="php-quote">'Update translation set code = :code where layoutId = :layoutId and language = :language'</span>);
+</span><span id="419" class="l"><a class="l" href="#419">419: </a>            <span class="php-var">$result</span> = <span class="php-var">$query</span>-&gt;execute(<span class="php-keyword1">array</span>(<span class="php-quote">'layoutId'</span> =&gt; <span class="php-var">$item</span>-&gt;getLayoutId(),
+</span><span id="420" class="l"><a class="l" href="#420">420: </a>                                            <span class="php-quote">'language'</span> =&gt; <span class="php-var">$item</span>-&gt;getLanguage(),
+</span><span id="421" class="l"><a class="l" href="#421">421: </a>                                            <span class="php-quote">'code'</span> =&gt; <span class="php-var">$item</span>-&gt;getCode()));
+</span><span id="422" class="l"><a class="l" href="#422">422: </a>        }
+</span><span id="423" class="l"><a class="l" href="#423">423: </a>        
+</span><span id="424" class="l"><a class="l" href="#424">424: </a>        <span class="php-comment">/* Mise à jour d'un objet EMail */</span>
+</span><span id="425" class="l"><a class="l" href="#425">425: </a>        
+</span><span id="426" class="l"><a class="l" href="#426">426: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$item</span> <span class="php-keyword1">instanceof</span> EMail) {
+</span><span id="427" class="l"><a class="l" href="#427">427: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;prepare(<span class="php-quote">'Update mail set ownerId = :ownerId, subjectId = :subjectId, content = :content, date = :date where id = :id'</span>);
+</span><span id="428" class="l"><a class="l" href="#428">428: </a>            <span class="php-var">$result</span> = <span class="php-var">$query</span>-&gt;execute(<span class="php-keyword1">array</span>(<span class="php-quote">'id'</span> =&gt; <span class="php-var">$item</span>-&gt;getId(),
+</span><span id="429" class="l"><a class="l" href="#429">429: </a>                                            <span class="php-quote">'content'</span> =&gt; <span class="php-var">$item</span>-&gt;getContent(),
+</span><span id="430" class="l"><a class="l" href="#430">430: </a>                                            <span class="php-quote">'ownerId'</span> =&gt; <span class="php-var">$item</span>-&gt;getOwnerId(),
+</span><span id="431" class="l"><a class="l" href="#431">431: </a>                                            <span class="php-quote">'date'</span> =&gt; <span class="php-var">$item</span>-&gt;<span class="php-keyword2">getDate</span>(),
+</span><span id="432" class="l"><a class="l" href="#432">432: </a>                                            <span class="php-quote">'subjectId'</span> =&gt; <span class="php-var">$item</span>-&gt;getSubjectId()));
+</span><span id="433" class="l"><a class="l" href="#433">433: </a>        }
+</span><span id="434" class="l"><a class="l" href="#434">434: </a>        
+</span><span id="435" class="l"><a class="l" href="#435">435: </a>        <span class="php-var">$query</span>-&gt;closeCursor();
+</span><span id="436" class="l"><a class="l" href="#436">436: </a>        <span class="php-keyword1">return</span> <span class="php-var">$result</span>;
+</span><span id="437" class="l"><a class="l" href="#437">437: </a>    }
 </span><span id="438" class="l"><a class="l" href="#438">438: </a>    
-</span><span id="439" class="l"><a class="l" href="#439">439: </a>    
+</span><span id="439" class="l"><a class="l" href="#439">439: </a>
 </span><span id="440" class="l"><a class="l" href="#440">440: </a>    
-</span><span id="441" class="l"><a class="l" href="#441">441: </a>    
-</span><span id="442" class="l"><a class="l" href="#442">442: </a>    
-</span><span id="443" class="l"><a class="l" href="#443">443: </a>    
+</span><span id="441" class="l"><a class="l" href="#441">441: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_kill" href="#_kill">kill</a>() {
+</span><span id="442" class="l"><a class="l" href="#442">442: </a>        <span class="php-var">$this</span>-&gt;_db = <span class="php-keyword1">null</span>;
+</span><span id="443" class="l"><a class="l" href="#443">443: </a>    }
 </span><span id="444" class="l"><a class="l" href="#444">444: </a>    
-</span><span id="445" class="l"><a class="l" href="#445">445: </a>    
-</span><span id="446" class="l"><a class="l" href="#446">446: </a>    
-</span><span id="447" class="l"><a class="l" href="#447">447: </a>    
-</span><span id="448" class="l"><a class="l" href="#448">448: </a>    
-</span><span id="449" class="l"><a class="l" href="#449">449: </a>    
-</span><span id="450" class="l"><a class="l" href="#450">450: </a>    
-</span><span id="451" class="l"><a class="l" href="#451">451: </a>    
-</span><span id="452" class="l"><a class="l" href="#452">452: </a>    
-</span><span id="453" class="l"><a class="l" href="#453">453: </a>    
-</span><span id="454" class="l"><a class="l" href="#454">454: </a>    
-</span><span id="455" class="l"><a class="l" href="#455">455: </a>    
-</span><span id="456" class="l"><a class="l" href="#456">456: </a>    
-</span><span id="457" class="l"><a class="l" href="#457">457: </a>    
-</span><span id="458" class="l"><a class="l" href="#458">458: </a>    
-</span><span id="459" class="l"><a class="l" href="#459">459: </a>    
-</span><span id="460" class="l"><a class="l" href="#460">460: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_loader" href="#_loader">loader</a>(<span class="php-var">$param</span>) {
-</span><span id="461" class="l"><a class="l" href="#461">461: </a>        <span class="php-keyword1">if</span>(<span class="php-var">$param</span> == <span class="php-quote">'user'</span>) {
-</span><span id="462" class="l"><a class="l" href="#462">462: </a>            <span class="php-var">$query</span> = <span class="php-var">$this</span>-&gt;_db-&gt;query(<span class="php-quote">'Select * From user'</span>);
-</span><span id="463" class="l"><a class="l" href="#463">463: </a>            <span class="php-var">$result</span> = <span class="php-keyword1">array</span>();
-</span><span id="464" class="l"><a class="l" href="#464">464: </a>            <span class="php-keyword1">foreach</span>(<span class="php-var">$query</span>-&gt;fetchAll() <span class="php-keyword1">as</span> <span class="php-var">$data</span>) {
-</span><span id="465" class="l"><a class="l" href="#465">465: </a>                <span class="php-var">$user</span> = <span class="php-keyword1">new</span> user();
-</span><span id="466" class="l"><a class="l" href="#466">466: </a>                <span class="php-var">$user</span>-&gt;setId(<span class="php-var">$data</span>[<span class="php-quote">'id'</span>]);
-</span><span id="467" class="l"><a class="l" href="#467">467: </a>                <span class="php-var">$user</span>-&gt;setName(<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]);
-</span><span id="468" class="l"><a class="l" href="#468">468: </a>                <span class="php-var">$user</span>-&gt;setPassword(<span class="php-var">$data</span>[<span class="php-quote">'password'</span>]);
-</span><span id="469" class="l"><a class="l" href="#469">469: </a>                <span class="php-var">$user</span>-&gt;setAvatar(<span class="php-var">$data</span>[<span class="php-quote">'avatar'</span>]);
-</span><span id="470" class="l"><a class="l" href="#470">470: </a>                <span class="php-var">$user</span>-&gt;setPoints(<span class="php-var">$data</span>[<span class="php-quote">'points'</span>]);
-</span><span id="471" class="l"><a class="l" href="#471">471: </a>                <span class="php-var">$user</span>-&gt;setRescuePassword(<span class="php-var">$data</span>[<span class="php-quote">'rescuePassword'</span>]);
-</span><span id="472" class="l"><a class="l" href="#472">472: </a>                <span class="php-keyword2">array_push</span>(<span class="php-var">$result</span>, <span class="php-var">$user</span>);
-</span><span id="473" class="l"><a class="l" href="#473">473: </a>            }
-</span><span id="474" class="l"><a class="l" href="#474">474: </a>        <span class="php-var">$query</span>-&gt;closeCursor();
-</span><span id="475" class="l"><a class="l" href="#475">475: </a>        }
-</span><span id="476" class="l"><a class="l" href="#476">476: </a>        <span class="php-keyword1">return</span> <span class="php-var">$result</span>;
-</span><span id="477" class="l"><a class="l" href="#477">477: </a>        
-</span><span id="478" class="l"><a class="l" href="#478">478: </a>    }
-</span><span id="479" class="l"><a class="l" href="#479">479: </a>    
-</span><span id="480" class="l"><a class="l" href="#480">480: </a>  
-</span><span id="481" class="l"><a class="l" href="#481">481: </a>    
-</span><span id="482" class="l"><a class="l" href="#482">482: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_update" href="#_update">update</a>(<span class="php-var">$item</span>) {
-</span><span id="483" class="l"><a class="l" href="#483">483: </a>        
-</span><span id="484" class="l"><a class="l" href="#484">484: </a>    }
-</span><span id="485" class="l"><a class="l" href="#485">485: </a>
-</span><span id="486" class="l"><a class="l" href="#486">486: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_exist" href="#_exist">exist</a>(<span class="php-var">$item</span>) {
-</span><span id="487" class="l"><a class="l" href="#487">487: </a>        
-</span><span id="488" class="l"><a class="l" href="#488">488: </a>    }
-</span><span id="489" class="l"><a class="l" href="#489">489: </a>    
-</span><span id="490" class="l"><a class="l" href="#490">490: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_kill" href="#_kill">kill</a>() {
-</span><span id="491" class="l"><a class="l" href="#491">491: </a>        <span class="php-var">$this</span>-&gt;_db = <span class="php-keyword1">null</span>;
-</span><span id="492" class="l"><a class="l" href="#492">492: </a>    }
-</span><span id="493" class="l"><a class="l" href="#493">493: </a>    
-</span><span id="494" class="l"><a class="l" href="#494">494: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getConnection" href="#_getConnection">getConnection</a>() {
-</span><span id="495" class="l"><a class="l" href="#495">495: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;_db;
-</span><span id="496" class="l"><a class="l" href="#496">496: </a>    }
-</span><span id="497" class="l"><a class="l" href="#497">497: </a></span>}</code></pre>
+</span><span id="445" class="l"><a class="l" href="#445">445: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getConnection" href="#_getConnection">getConnection</a>() {
+</span><span id="446" class="l"><a class="l" href="#446">446: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;_db;
+</span><span id="447" class="l"><a class="l" href="#447">447: </a>    }
+</span><span id="448" class="l"><a class="l" href="#448">448: </a></span>}</code></pre>
 
 	<div id="footer">
 		CodeLeFort API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
