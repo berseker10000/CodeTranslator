@@ -37,8 +37,8 @@
 
 
 <?php
+
     if(isset($_POST['action'])) {
-        echo 'Envoi !';
         
        $ownerId = 1;
        $pseudoCode = htmlentities($_POST['pseudoCode']);
@@ -57,8 +57,17 @@
        \Ptut\App\Model\TranslationCollection::add($layoutId, 'javascript', $javascript);
        \Ptut\App\Model\TranslationCollection::add($layoutId, 'java', $java);
        \Ptut\App\Model\TranslationCollection::add($layoutId, 'python', $python);
-        
-        
-        
     }
+    
+    $algo = \Ptut\App\Model\Library::find(['*'], ['id' => 2]);
+    $traduction = \Ptut\App\Controler\Translator::translate(htmlentities($algo->content), 'python'); 
 ?>
+
+<div class="row">
+    <div class="col l6">
+        <?= nl2br($algo->content) ?>
+    </div>
+    <div class="col l6">
+        <?= \Ptut\App\Controler\Translator::layOut($traduction) ?>
+    </div>
+</div>

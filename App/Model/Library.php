@@ -23,7 +23,7 @@ class Library {
     static public function find($fields = ['*'], $params = []) {
        $db = Connection::getConnection();
         $table = 'function';
-        if(isset($params) && $params[0] == 'public') {
+        if(isset($params[0]) && $params[0] == 'public') {
             $table = 'function, library';
             $params = [];
             $params['function.id'] = 'library.functionId';

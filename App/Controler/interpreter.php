@@ -23,7 +23,7 @@ function interpreting($data) {
     $remplacements[3]=  '(.*)';
     
     $patterns[4] =      '#\$entier#i';
-    $remplacements[4]=  '(-?[0-9]+\s)';
+    $remplacements[4]=  '(-?[0-9]+)';
     
     $patterns[5]=       '#\$reel#';
     $remplacements[5]=  '[\-\+]?[0-9]*(\.[0-9]+)?';

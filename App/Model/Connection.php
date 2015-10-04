@@ -99,8 +99,8 @@ class Connection {
         return $this->_db->rowCount();
     }
     
-    public function query($query, $params = []) {
-        $q = $this->_db->query($query);
+    public function query($query, $params = null) {
+        $q = $this->_db->prepare($query);
         $q->execute($params);
         return $q;
     }
